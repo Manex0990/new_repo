@@ -1,12 +1,12 @@
 import sys
 from PyQt6 import uic
-from PyQt6.QtCore import QPoint
+from PyQt6.QtCore import QPointF
 from PyQt6.QtGui import QPainter, QColor
-from PyQt6.QtWidgets import QApplication, QMainWindow
+from PyQt6.QtWidgets import QApplication, QWidget
 from random import randint
 
 
-class Painter(QMainWindow):
+class Painter(QWidget):
     def __init__(self):
         super().__init__()
         uic.loadUi('UI.ui', self)
@@ -18,7 +18,9 @@ class Painter(QMainWindow):
         rad = randint(20, 100)
         color = QColor(255, 255, 0)
         qp.setBrush(color)
-        qp.drawEllipse(QPoint(400, 300), rad, rad)
+        qp.drawEllipse(QPointF(300, 200), rad, rad)
+        qp.end()
+
 
 
 def except_hook(cls, exception, traceback):

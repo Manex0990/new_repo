@@ -36,3 +36,10 @@ class Painter(QWidget, Ui_Form):
         qp.setBrush(color)
         qp.drawEllipse(QPointF(300, 200), rad, rad)
         qp.end()
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = Painter()
+    ex.show()
+    sys.exit(app.exec())
